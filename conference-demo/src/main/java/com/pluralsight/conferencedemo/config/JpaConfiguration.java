@@ -3,7 +3,7 @@ package com.pluralsight.conferencedemo.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hibernate.dialect.PostgreSQL95Dialect;
+import org.hibernate.dialect.MySQLDialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -23,8 +23,8 @@ public class JpaConfiguration {
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-		dataSource.setDriverClassName(com.mysql.jdbbc.Driver.class.getName());
-		dataSource.setUrl("jdbc:mysql://localhot:3306/conference_app");
+		dataSource.setDriverClassName(com.mysql.jdbc.Driver.class.getName());
+		dataSource.setUrl("jdbc:mysql://localhost:3306/conference_demo");
 		dataSource.setUsername("root");
 		dataSource.setPassword("password");
 
@@ -34,7 +34,7 @@ public class JpaConfiguration {
 	@Bean
 	public Map<String, Object> jpaProperties() {
 		Map<String, Object> props = new HashMap<String, Object>();
-		props.put("hibernate.dialect", PostgreSQL95Dialect.class.getName());
+		props.put("hibernate.dialect", MySQLDialect.class.getName());
 //		props.put("hibernate.cache.provider_class", HashtableCacheProvider.class.getName());
 		return props;
 	}
