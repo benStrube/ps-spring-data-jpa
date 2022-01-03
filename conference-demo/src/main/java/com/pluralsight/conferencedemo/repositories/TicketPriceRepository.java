@@ -1,6 +1,5 @@
 package com.pluralsight.conferencedemo.repositories;
 
-import com.pluralsight.conferencedemo.models.Speaker;
 import com.pluralsight.conferencedemo.models.TicketPrice;
 import org.springframework.stereotype.Repository;
 
